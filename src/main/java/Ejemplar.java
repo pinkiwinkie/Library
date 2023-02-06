@@ -6,6 +6,7 @@ public class Ejemplar {
     private String fechaDevolucion;
 //    private List<Abonado> abonados;
 
+
     public Ejemplar(int codigo, String fechaPrestamo, String fechaDevolucion) {
         this.codigo = codigo;
         this.fechaPrestamo = fechaPrestamo;

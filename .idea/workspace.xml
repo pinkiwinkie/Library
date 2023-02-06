@@ -4,18 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e34a8a9a-446d-4016-b5ba-ce74ae0ffd05" name="Changes" comment="">
+    <list default="true" id="e34a8a9a-446d-4016-b5ba-ce74ae0ffd05" name="Changes" comment="first commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ListAbonados.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ListEjemplares.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ListPublicaciones.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Abonado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Abonado.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ejemplar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ejemplar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Libro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Libro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Periodico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Periodico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Prueba.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Prueba.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LinkedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Node.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Publicacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Publicacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Revista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Revista.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +52,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "/home/eruizm/IdeaProjects/Listas"
+    "last_opened_file_path": "/home/eruizm/IdeaProjects/Chess"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -65,6 +64,18 @@
       <option name="presentableId" value="Default" />
       <updated>1675187632768</updated>
     </task>
+    <task id="LOCAL-00001" summary="first commit">
+      <created>1675360024507</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1675360024507</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>
 </project>

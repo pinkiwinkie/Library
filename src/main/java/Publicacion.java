@@ -12,7 +12,7 @@ public abstract class Publicacion {
     @Override
     public String toString() {
         String output = "";
-        output += "Publicacion{" +
+        output += "Publicacion: " +
                 "editorial= " + editorial +
                 ", numPags= " + numPags;
         if (color)

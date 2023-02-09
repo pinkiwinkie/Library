@@ -4,19 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e34a8a9a-446d-4016-b5ba-ce74ae0ffd05" name="Changes" comment="listas done&#10;falta la implementacion">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Prestamo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/listas/GenericLinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/listas/Node.java" afterDir="false" />
+    <list default="true" id="e34a8a9a-446d-4016-b5ba-ce74ae0ffd05" name="Changes" comment="cambiar toString para que no salga stackoverflow.&#10;modificar ejemplar y libro los parametros.&#10;arreglar la salida para que salga ordenado.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Abonado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Abonado.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ejemplar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ejemplar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Libro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Libro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ListAbonados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/listas/ListAbonados.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ListEjemplares.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/listas/ListEjemplares.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ListPublicaciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/listas/ListPublicaciones.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Prueba.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Periodico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Periodico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Prestamo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Prestamo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,15 +44,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_directory_selection": "/home/eruizm/IdeaProjects/Library/src/main/java/listas",
-    "last_opened_file_path": "/home/eruizm/IdeaProjects/Listas"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;/home/eruizm/IdeaProjects/Library/src/main/java/listas&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/eruizm/IdeaProjects/Listas&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="listas" />
@@ -100,12 +95,31 @@
       <option name="project" value="LOCAL" />
       <updated>1675707443107</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="cambiar toString para que no salga stackoverflow.&#10;modificar ejemplar y libro los parametros.&#10;arreglar la salida para que salga ordenado.">
+      <created>1675800822562</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1675800822562</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
     <MESSAGE value="listas done&#10;falta la implementacion" />
-    <option name="LAST_COMMIT_MESSAGE" value="listas done&#10;falta la implementacion" />
+    <MESSAGE value="cambiar toString para que no salga stackoverflow.&#10;modificar ejemplar y libro los parametros.&#10;arreglar la salida para que salga ordenado." />
+    <option name="LAST_COMMIT_MESSAGE" value="cambiar toString para que no salga stackoverflow.&#10;modificar ejemplar y libro los parametros.&#10;arreglar la salida para que salga ordenado." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

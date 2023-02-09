@@ -14,9 +14,11 @@ public class Abonado {
 
     @Override
     public String toString() {
-        return "Abonado: " +
-                "name= " + name +
-                ", dni= " + dni ;
+        return "Nombre: " + name +
+                "dni: " + dni;
+//        return "Abonado: " +
+//                "name= " + name +
+//                ", dni= " + dni ;
 //                ", librosPrestados=" + librosPrestados;
     }
 }

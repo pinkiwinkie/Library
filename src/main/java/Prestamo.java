@@ -1,6 +1,6 @@
 public class Prestamo {
     private String fechaInicio, fechaDevolucion;
-    private Libro libro;//ponerlo en ejemplar
+    private Libro libro;
     private int codigoEjemplar;
 
     public Prestamo(String fechaInicio, String fechaDevolucion, Libro libro, int codigoEjemplar) {
@@ -28,10 +28,15 @@ public class Prestamo {
 
     @Override
     public String toString() {
-        return "Prestamo: " +
-                "fechaInicio= " + fechaInicio +
-                ", fechaDevolucion= " + fechaDevolucion +
-                ", libro= " + libro +
-                ", codigoEjemplar= " + codigoEjemplar;
+        return "El prestamo se ha iniciado el " + fechaInicio +
+                " y finaliza el " + fechaDevolucion +
+                ". El ejemplar tiene el codigo " + codigoEjemplar +
+                ". Y los datos del libro son los siguientes: \n" + libro;
+
+//        return "Prestamo: " +
+//                "fechaInicio= " + fechaInicio +
+//                ", fechaDevolucion= " + fechaDevolucion +
+//                ", libro= " + libro +
+//                ", codigoEjemplar= " + codigoEjemplar;
     }
 }

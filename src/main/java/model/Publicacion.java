@@ -1,3 +1,5 @@
+package model;
+
 public abstract class Publicacion {
     private String editorial;
     private int numPags;
@@ -12,13 +14,12 @@ public abstract class Publicacion {
     @Override
     public String toString() {
         String output = "";
-        output += "Publicacion: " +
-                "editorial= " + editorial +
-                ", numPags= " + numPags;
+        output += "publicacion con editorial: " + editorial +
+                " y con " + numPags + " paginas,";
         if (color)
-            output+= " publicacion a color.";
+            output+= " tiene impresion a color.\n";
         else
-            output+= " publicacion en blanco y negro.";
+            output+= " tiene impresion a blanco y negro.\n";
         return output;
     }
 }

@@ -1,9 +1,9 @@
+package model;
+
 import listas.GenericLinkedList;
 
-public class Libro extends Publicacion{
-
-    private String autor;
-    private String title;
+public class Libro extends Publicacion {
+    private String autor, title;
     private int isbn;
     private GenericLinkedList<Ejemplar> ejemplares = new GenericLinkedList<>();
 
@@ -14,33 +14,31 @@ public class Libro extends Publicacion{
         this.isbn = isbn;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
     public GenericLinkedList<Ejemplar> getEjemplares() {
         return ejemplares;
     }
 
     public GenericLinkedList<Ejemplar> addEjemplar(int num) {
-        for (int i = 0; i <num; i++) {
-            ejemplares.addTail(new Ejemplar(ejemplares.size()+1));
+        for (int i = 0; i < num; i++) {
+            ejemplares.addTail(new Ejemplar(ejemplares.size() + 1));
         }
         return ejemplares;
     }
+
     @Override
     public String toString() {
-        String output  = "";
-        output += "El titulo es " + title +
-                ", el autor es " + autor +
-                ", el isbn = " + isbn;
+        String output = "";
+        output += "Libro con nombre '" + title + "' " +
+                ", lo escribio " + autor +
+                ". el isbn es " + isbn;
         if (ejemplares.isEmpty())
             output += ". Y no tiene ejemplares.";
         else
             output += ". Tiene los siguientes ejemplares: " + ejemplares;
-        return output;
-//        return "Libro: " +
-//                "autor= " + autor +
-//                ", title= " + title +
-//                ", isbn=" + isbn +
-//                ", numEjemplares=" + numEjemplares +
-//                ", ejemplares=" + ejemplares;
-///                + super.toString();
+        return output + " Es una " + super.toString();
     }
 }

@@ -42,7 +42,11 @@ public class Library {
                 "2. Devolver publicacion");
         if (option == 1) {
             mostrarPublicaciones();
-            int eleccion = Input.getInt("");
+            String titleLibro = Input.getString("Que libro quieres obtener");
+            for (int i = 0; i < publicaciones.size(); i++) {
+
+            }
+
         }
     }
 
@@ -65,6 +69,19 @@ public class Library {
         for (int i = 0; i < clientes.size(); i++) {
             System.out.println(clientes.get(i));
         }
+    }
+
+    public String buscarTitulo(String titulo){
+        publicaciones.search(new Libro());
+    }
+
+
+    public GenericLinkedList<Publicacion> getPublicaciones() {
+        return publicaciones;
+    }
+
+    public GenericLinkedList<Abonado> getClientes() {
+        return clientes;
     }
 
     @Override

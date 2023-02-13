@@ -41,4 +41,9 @@ public class Libro extends Publicacion {
             output += ". Tiene los siguientes ejemplares: " + ejemplares;
         return output + " Es una " + super.toString();
     }
+
+    @Override
+    public boolean equals(Object obj) {
+
+    }
 }

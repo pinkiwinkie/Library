@@ -236,6 +236,19 @@ public class Library {
         }
     }
 
+    public String buscarTitulo(String titulo){
+        publicaciones.search(new Libro());
+    }
+
+
+    public GenericLinkedList<Publicacion> getPublicaciones() {
+        return publicaciones;
+    }
+
+    public GenericLinkedList<Abonado> getClientes() {
+        return clientes;
+    }
+
     @Override
     public String toString() {
         return "La biblioteca tiene las siguientes publicaciones: \n" +

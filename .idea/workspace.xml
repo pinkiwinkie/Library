@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e34a8a9a-446d-4016-b5ba-ce74ae0ffd05" name="Changes" comment="cambios del lunes">
+    <list default="true" id="e34a8a9a-446d-4016-b5ba-ce74ae0ffd05" name="Changes" comment="todo ok.&#10;Haciendo prueba de 3 listas para unificarlas a 1.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/logic/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/Library.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Abonado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Abonado.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,12 +92,31 @@
       <option name="project" value="LOCAL" />
       <updated>1676290696715</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="todo ok.&#10;Haciendo prueba de 3 listas para unificarlas a 1.">
+      <created>1676309942672</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1676309942672</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
     <MESSAGE value="cambios del lunes" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambios del lunes" />
+    <MESSAGE value="todo ok.&#10;Haciendo prueba de 3 listas para unificarlas a 1." />
+    <option name="LAST_COMMIT_MESSAGE" value="todo ok.&#10;Haciendo prueba de 3 listas para unificarlas a 1." />
   </component>
 </project>

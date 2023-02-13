@@ -236,9 +236,9 @@ public class Library {
         }
     }
 
-    public String buscarTitulo(String titulo){
-        publicaciones.search(new Libro());
-    }
+//    public String buscarTitulo(String titulo){
+//        publicaciones.search(new Libro());
+//    }
 
 
     public GenericLinkedList<Publicacion> getPublicaciones() {

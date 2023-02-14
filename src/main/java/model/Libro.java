@@ -1,6 +1,7 @@
 package model;
 
 import listas.GenericLinkedList;
+import tools.Input;
 
 public class Libro extends Publicacion {
     private String autor, title;
@@ -33,6 +34,24 @@ public class Libro extends Publicacion {
         return ejemplares;
     }
 
+    public void addPrestamo(Abonado a){
+        if (ejemplares.isEmpty())
+            System.out.println("El libro no tiene ejemplares disponibles");
+        else
+            a.addPrestamo(this);
+    }
+
+    public void removePrestamo(Abonado a){
+        if (a.getLibrosPrestados().isEmpty())
+            System.out.println("No tienes ningun libro para devolver.");
+        else {
+            int codEjemplar = Input.getInt("Dime el codigo del ejemplar");
+            for (int i = 0; i < a.getLibrosPrestados().size(); i++) {
+                if (codEjemplar == a.getLibrosPrestados().get(i).getCodigoEjemplar(this))
+                    removePrestamo(a);
+            }
+        }
+    }
     @Override
     public String toString() {
         String output = "";

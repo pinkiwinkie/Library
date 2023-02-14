@@ -24,7 +24,7 @@ public class Library {
         libros.addHead(new Libro("uno", 123, true, "yo", "uno cualquiera", 123123));
         periodicos.addHead(new Periodico("dos", 123, false, "masdos"));
         revistas.addHead(new Revista("tres", 465, true, "tre", "cine", Periodicidad.SEMANAL));
-//        publicaciones = merge(libros, periodicos, revistas);
+        publicaciones = merge(libros, periodicos, revistas);
     }
 
     private GenericLinkedList<Abonado> generarClientes() {
@@ -92,9 +92,11 @@ public class Library {
 
     private void obtenerLibro(){
         mostrarLibros();
-        String option2 = Input.getString("Que libro? (Dime isbn)");
-        for (int i = 0; i < clientes.size(); i++) {
+        int option2 = Input.getInt("Que libro? (Dime isbn)");
+        for (int i = 0; i < libros.size(); i++) {
+            if (option2 == libros.get(i).getIsbn()){
 
+            }
         }
         mostrarClientes();
         String option = Input.getString("Que cliente? (Dime dni)");
@@ -117,31 +119,22 @@ public class Library {
                     "\n 6. Volver");
             if (option == 1) {
                 darAltaPublicacion();
-                mostrarRevistas();
-                mostrarLibros();
-                mostrarPeriodicos();
                 primerMenu();
                 salir = true;
             } else if (option == 2) {
                 darBajaPublicacion();
-                mostrarRevistas();
-                mostrarLibros();
-                mostrarPeriodicos();
                 primerMenu();
                 salir = true;
             } else if (option == 3) {
                 darAltaCliente();
-                mostrarClientes();
                 primerMenu();
                 salir = true;
             } else if (option == 4) {
                 darBajaCliente();
-                mostrarClientes();
                 primerMenu();
                 salir = true;
             } else if (option == 5) {
                 actualizarDatosClientes();
-                mostrarClientes();
                 primerMenu();
                 salir = true;
             } else if (option == 6) {
@@ -162,6 +155,7 @@ public class Library {
                 }
             }
         }
+        mostrarClientes();
     }
 
     public void darBajaPublicacion() {
@@ -199,6 +193,8 @@ public class Library {
                 }
             }
         }
+        publicaciones = merge(libros,periodicos,revistas);
+        mostrarPublicaciones();
     }
 
     private void darBajaLibro() {
@@ -211,9 +207,11 @@ public class Library {
                 }
             }
         }
+        publicaciones = merge(libros,periodicos,revistas);
+        mostrarPublicaciones();
     }
 
-    private void darBajaRevista() {
+    public void darBajaRevista() {
         mostrarRevistas();
         if (!revistas.isEmpty()) {
             String eleccion = Input.getString("Cual? Introduce nombre");
@@ -223,19 +221,43 @@ public class Library {
                 }
             }
         }
+        publicaciones = merge(libros,periodicos,revistas);
+        mostrarPublicaciones();
     }
 
     private void actualizarDatosClientes() {
+        boolean salir = false;
         String option = Input.getString("Que cliente quieres modificar? (Escribe dni)");
-        for (int i = 0; i < clientes.size(); i++) {
-            if (option.equals(clientes.get(i).getDni())) {
-
+        do {
+            int datoModificar = Input.getInt("Que dato va a modificar? (1. Nombre. 2. Dni. 3. Ambos");
+            String datoModificado;
+            for (int i = 0; i < clientes.size(); i++) {
+                if (option.equals(clientes.get(i).getDni())) {
+                    if (datoModificar == 1) {
+                        datoModificado = Input.getString("Dime el nuevo nombre");
+                        clientes.get(i).setName(datoModificado);
+                        salir = true;
+                    } else if (datoModificar == 2) {
+                        datoModificado = Input.getString("Dime el nuevo dni");
+                        clientes.get(i).setDni(datoModificado);
+                        salir = true;
+                    } else if (datoModificar == 3) {
+                        datoModificado = Input.getString("Dime el nuevo nombre");
+                        clientes.get(i).setName(datoModificado);
+                        datoModificado = Input.getString("Dime el nuevo dni");
+                        clientes.get(i).setDni(datoModificado);
+                        salir = true;
+                    }else
+                        System.out.println("Introduce un numero valido");
+                }
             }
-        }
+        } while (!salir);
+        mostrarClientes();
     }
 
     private GenericLinkedList<Publicacion> merge(GenericLinkedList<Libro> libros, GenericLinkedList<Periodico> periodicos, GenericLinkedList<Revista> revistas) {
         Publicacion p;
+        publicaciones.clear();
         for (int i = 0; i < libros.size(); i++) {
             p = libros.get(i);
             publicaciones.addHead(p);
@@ -268,11 +290,6 @@ public class Library {
     }
 
     private void darAltaPublicacion() {
-        addPublicacion();
-        mostrarPublicaciones();
-    }
-
-    private void addPublicacion() {
         int option = Input.getInt("Que tipo de publicacion?\n " +
                 "1. Revistas." +
                 "\n 2. Libros." +
@@ -280,15 +297,19 @@ public class Library {
         if (option == 1) {
             Revista revista = crearUnaRevista();
             revistas.addTail(revista);
+            publicaciones = merge(libros, periodicos, revistas);
         } else if (option == 2) {
             Libro libro = crearUnLibro();
+            libro.addEjemplar(3);
             libros.addTail(libro);
+            publicaciones = merge(libros, periodicos, revistas);
         } else if (option == 3) {
             Periodico periodico = crearUnPeriodico();
             periodicos.addTail(periodico);
+            publicaciones = merge(libros, periodicos, revistas);
         }
+        mostrarPublicaciones();
     }
-
     private Periodico crearUnPeriodico() {
         String editorial, name;
         int numPag, color;
@@ -385,18 +406,18 @@ public class Library {
     }
 
     public void mostrarPublicaciones() {
-        if (publicaciones.isEmpty())
-            System.out.println("No hay publicaciones.");
-        else {
+//        if (publicaciones.isEmpty())
+//            System.out.println("No hay publicaciones.");
+//        else {
             for (int i = 0; i < publicaciones.size(); i++) {
                 if (publicaciones.get(i) == null) {
-                    System.out.println("no hay publicaciones");
+//                    System.out.println("no hay publicaciones");
                 } else {
                     System.out.print((i + 1) + " " + publicaciones.get(i));
                 }
             }
             System.out.println();
-        }
+//        }
     }
 
     public void mostrarRevistas() {
@@ -449,9 +470,9 @@ public class Library {
             System.out.println("No hay clientes");
         else {
             for (int i = 0; i < clientes.size(); i++) {
-                if (clientes.get(i) == null) {
+                if (clientes.get(i) == null)
                     System.out.println("no hay clientes");
-                }else {
+                else {
                     System.out.print((i + 1) + " " + clientes.get(i));
                 }
             }
@@ -470,7 +491,7 @@ public class Library {
     @Override
     public String toString() {
         return "La biblioteca tiene las siguientes publicaciones: \n" +
-                libros + revistas + periodicos
+                publicaciones
                 + " y los siguientes clientes: \n" +
                 clientes;
     }

@@ -24,6 +24,6 @@ public class Input {
     public static String getString(String message) {
         Scanner sc = new Scanner(System.in);
         System.out.println(message);
-        return sc.next().toLowerCase();
+        return sc.nextLine().toLowerCase();
     }
 }

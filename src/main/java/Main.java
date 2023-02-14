@@ -9,7 +9,7 @@ public class Main {
 //        System.out.println("---------");
 //        library.mostrarRevistas();
 //        System.out.println("----------");
-        library.mostrarLibros();
+        library.primerMenu();
 //        library.mostrarPeriodicos();
 //        library.darBajaPublicacion();
 //        System.out.println(library);

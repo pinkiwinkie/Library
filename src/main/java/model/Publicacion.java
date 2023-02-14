@@ -11,6 +11,18 @@ public abstract class Publicacion {
         this.color = color;
     }
 
+    public String getEditorial() {
+        return editorial;
+    }
+
+    public int getNumPags() {
+        return numPags;
+    }
+
+    public boolean isColor() {
+        return color;
+    }
+
     @Override
     public String toString() {
         String output = "";

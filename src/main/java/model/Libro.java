@@ -14,6 +14,10 @@ public class Libro extends Publicacion {
         this.isbn = isbn;
     }
 
+    public int getIsbn() {
+        return isbn;
+    }
+
     public String getTitle() {
         return title;
     }
@@ -40,10 +44,5 @@ public class Libro extends Publicacion {
         else
             output += ". Tiene los siguientes ejemplares: " + ejemplares;
         return output + " Es una " + super.toString();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-
     }
 }

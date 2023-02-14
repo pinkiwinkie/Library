@@ -4,6 +4,8 @@ import listas.GenericLinkedList;
 import model.*;
 import tools.Input;
 
+import java.util.SortedMap;
+
 public class Library {
     //  si no lo inicializas sale NUllPointerException
     private GenericLinkedList<Publicacion> publicaciones = new GenericLinkedList<>();
@@ -12,19 +14,20 @@ public class Library {
     private GenericLinkedList<Periodico> periodicos = new GenericLinkedList<>();
     private GenericLinkedList<Revista> revistas = new GenericLinkedList<>();
 
+
     public Library() {
-        this.publicaciones = generarPublicaciones();
+        generarPublicaciones();
         this.clientes = generarClientes();
     }
 
-    public GenericLinkedList<Publicacion> generarPublicaciones() {
-        publicaciones.addTail(new Libro("uno", 123, true, "yo", "uno cualquiera", 123123));
-        publicaciones.addTail(new Periodico("dos", 123, false, "dos masdos"));
-        publicaciones.addTail(new Revista("tres", 465, true, "un tre", "cine", Periodicidad.SEMANAL));
-        return publicaciones;
+    private void generarPublicaciones() {
+        libros.addHead(new Libro("uno", 123, true, "yo", "uno cualquiera", 123123));
+        periodicos.addHead(new Periodico("dos", 123, false, "masdos"));
+        revistas.addHead(new Revista("tres", 465, true, "tre", "cine", Periodicidad.SEMANAL));
+//        publicaciones = merge(libros, periodicos, revistas);
     }
 
-    public GenericLinkedList<Abonado> generarClientes() {
+    private GenericLinkedList<Abonado> generarClientes() {
         clientes.addTail(new Abonado("helena", "1233456"));
         clientes.addTail(new Abonado("jose", "98798456"));
         return clientes;
@@ -34,12 +37,15 @@ public class Library {
         boolean salir = false;
         do {
             int option = Input.getInt("Como va a acceder? \n " +
-                    "1. Cliente.\n" + " 2. Empleado.");
+                    "1. Cliente.\n" + " 2. Empleado.\n" + " 3. Salir.");
             if (option == 1) {
                 mostrarMenuCliente();
                 salir = true;
             } else if (option == 2) {
                 mostrarMenuEmpleado();
+                salir = true;
+            } else if (option == 3) {
+                System.out.println("Saliendo.");
                 salir = true;
             } else
                 System.out.println("Introduce 1 o 2");
@@ -47,12 +53,55 @@ public class Library {
     }
 
     private void mostrarMenuCliente() {
-        int option = Input.getInt("Que quiere hacer? \n" +
-                "1. Obtener una publicacion." +
-                "\n2. Devolver publicacion" +
-                "\n3. Volver");
-        if (option == 1) {
-            mostrarPublicaciones();
+        boolean salir = false;
+        do {
+            int option = Input.getInt("Que quiere hacer? \n " +
+                    "1. Obtener un libro." +
+                    "\n 2. Devolver un libro." +
+                    "\n 3. Ver mis prestamos." +
+                    "\n 4. Volver");
+            if (option == 1) {
+                mostrarPublicaciones();
+                obtenerLibro();
+                salir = true;
+            } else if (option == 2) {
+                devolverLibro();
+                salir = true;
+            } else if (option == 3) {
+//                verPrestamos();
+                salir = true;
+            } else if (option == 4) {
+                primerMenu();
+                salir = true;
+            } else
+                System.out.println("Introduce un numero valido");
+        } while (!salir);
+    }
+
+//    private void verPrestamos() {
+//        mostrarClientes();
+//        String option = Input.getString("Que cliente? (Dime dni)");
+//        for (int i = 0; i < clientes.size(); i++) {
+//            if (option.equals(clientes.get(i).getDni()))
+//                System.out.println(clientes.get(i).getLibrosPrestados());
+//        }
+//    }
+
+    private void devolverLibro() {
+    }
+
+    private void obtenerLibro(){
+        mostrarLibros();
+        String option2 = Input.getString("Que libro? (Dime isbn)");
+        for (int i = 0; i < clientes.size(); i++) {
+
+        }
+        mostrarClientes();
+        String option = Input.getString("Que cliente? (Dime dni)");
+        for (int i = 0; i < clientes.size(); i++) {
+            if (option.equals(clientes.get(i).getDni())){
+//                clientes.get(i).addPrestamo();
+            }
         }
     }
 
@@ -68,31 +117,141 @@ public class Library {
                     "\n 6. Volver");
             if (option == 1) {
                 darAltaPublicacion();
+                mostrarRevistas();
+                mostrarLibros();
+                mostrarPeriodicos();
+                primerMenu();
                 salir = true;
             } else if (option == 2) {
                 darBajaPublicacion();
+                mostrarRevistas();
+                mostrarLibros();
+                mostrarPeriodicos();
+                primerMenu();
                 salir = true;
             } else if (option == 3) {
                 darAltaCliente();
+                mostrarClientes();
+                primerMenu();
                 salir = true;
             } else if (option == 4) {
-//                darBajaCliente();
+                darBajaCliente();
+                mostrarClientes();
+                primerMenu();
                 salir = true;
             } else if (option == 5) {
+                actualizarDatosClientes();
+                mostrarClientes();
+                primerMenu();
                 salir = true;
             } else if (option == 6) {
                 primerMenu();
                 salir = true;
             } else
                 System.out.println("Introduce un numero valido.");
-        } while(!salir);
+        } while (!salir);
     }
 
-    private void darBajaPublicacion(){
-
-        String option = Input.getString("Que publicacion quiere borrar? (Introduce nombre):");
-
+    private void darBajaCliente() {
+        mostrarClientes();
+        if (!clientes.isEmpty()) {
+            String eleccion = Input.getString("Cual? Introduce dni");
+            for (int i = 0; i < clientes.size(); i++) {
+                if (eleccion.equals(clientes.get(i).getDni())) {
+                    clientes.remove(i);
+                }
+            }
+        }
     }
+
+    public void darBajaPublicacion() {
+        boolean salir = false;
+        do {
+            int option = Input.getInt("Que tipo de publicacion?\n " +
+                    "1. Revistas." +
+                    "\n 2. Libros." +
+                    "\n 3. Periodicos" +
+                    "\n 4. Volver");
+            if (option == 1) {
+                darBajaRevista();
+                salir = true;
+            } else if (option == 2) {
+                darBajaLibro();
+                salir = true;
+            } else if (option == 3) {
+                darBajaPeriodico();
+                salir = true;
+            } else if (option == 4) {
+                mostrarMenuEmpleado();
+                salir = true;
+            } else
+                System.out.println("Introduce una opcion valida");
+        }while (!salir);
+    }
+
+    private void darBajaPeriodico() {
+        mostrarPeriodicos();
+        if (!periodicos.isEmpty()) {
+            String eleccion = Input.getString("Cual? Introduce nombre");
+            for (int i = 0; i < periodicos.size(); i++) {
+                if (eleccion.equals(periodicos.get(i).getNombre())) {
+                    periodicos.remove(i);
+                }
+            }
+        }
+    }
+
+    private void darBajaLibro() {
+        mostrarLibros();
+        if (!libros.isEmpty()) {
+            int eleccion = Input.getInt("Cual? Introduce isbn");
+            for (int i = 0; i <= libros.size(); i++) {
+                if (eleccion == libros.get(i).getIsbn()) {
+                    libros.remove(i);
+                }
+            }
+        }
+    }
+
+    private void darBajaRevista() {
+        mostrarRevistas();
+        if (!revistas.isEmpty()) {
+            String eleccion = Input.getString("Cual? Introduce nombre");
+            for (int i = 0; i <= revistas.size(); i++) {
+                if (eleccion.equals(revistas.get(i).getNombre())) {
+                    revistas.remove(i);
+                }
+            }
+        }
+    }
+
+    private void actualizarDatosClientes() {
+        String option = Input.getString("Que cliente quieres modificar? (Escribe dni)");
+        for (int i = 0; i < clientes.size(); i++) {
+            if (option.equals(clientes.get(i).getDni())) {
+
+            }
+        }
+    }
+
+    private GenericLinkedList<Publicacion> merge(GenericLinkedList<Libro> libros, GenericLinkedList<Periodico> periodicos, GenericLinkedList<Revista> revistas) {
+        Publicacion p;
+        for (int i = 0; i < libros.size(); i++) {
+            p = libros.get(i);
+            publicaciones.addHead(p);
+        }
+        for (int i = 0; i < libros.size(); i++) {
+            p = periodicos.get(i);
+            publicaciones.addHead(p);
+        }
+
+        for (int i = 0; i < libros.size(); i++) {
+            p = revistas.get(i);
+            publicaciones.addHead(p);
+        }
+        return publicaciones;
+    }
+
     private Abonado generarCliente() {
         String name, dni;
 
@@ -105,27 +264,28 @@ public class Library {
     private void darAltaCliente() {
         Abonado abonado = generarCliente();
         clientes.addTail(abonado);
+        mostrarClientes();
     }
 
     private void darAltaPublicacion() {
-        menuPublicaciones();
+        addPublicacion();
         mostrarPublicaciones();
     }
 
-    private void menuPublicaciones() {
+    private void addPublicacion() {
         int option = Input.getInt("Que tipo de publicacion?\n " +
                 "1. Revistas." +
                 "\n 2. Libros." +
                 "\n 3. Periodicos");
         if (option == 1) {
             Revista revista = crearUnaRevista();
-            publicaciones.addTail(revista);
+            revistas.addTail(revista);
         } else if (option == 2) {
             Libro libro = crearUnLibro();
-            publicaciones.addTail(libro);
+            libros.addTail(libro);
         } else if (option == 3) {
             Periodico periodico = crearUnPeriodico();
-            publicaciones.addTail(periodico);
+            periodicos.addTail(periodico);
         }
     }
 
@@ -225,21 +385,79 @@ public class Library {
     }
 
     public void mostrarPublicaciones() {
-        for (int i = 0; i < publicaciones.size(); i++) {
-            System.out.println(publicaciones.get(i));
+        if (publicaciones.isEmpty())
+            System.out.println("No hay publicaciones.");
+        else {
+            for (int i = 0; i < publicaciones.size(); i++) {
+                if (publicaciones.get(i) == null) {
+                    System.out.println("no hay publicaciones");
+                } else {
+                    System.out.print((i + 1) + " " + publicaciones.get(i));
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    public void mostrarRevistas() {
+        if (revistas.isEmpty())
+            System.out.println("No hay revistas.");
+        else {
+            for (int i = 0; i < revistas.size(); i++) {
+                if (revistas.get(i) == null) {
+                    System.out.println("no hay revistas");
+                }else{
+                    System.out.print((i + 1) + " " + revistas.get(i));
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    public void mostrarPeriodicos() {
+        if (periodicos.isEmpty())
+            System.out.println("No hay periodicos");
+        else {
+            for (int i = 0; i < periodicos.size(); i++) {
+                if (periodicos.get(i) == null) {
+                    System.out.println("no hay periodicos");
+                }else {
+                    System.out.print((i + 1) + " " + periodicos.get(i));
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    public void mostrarLibros() {
+        if (libros.isEmpty())
+            System.out.println("No hay libros");
+        else {
+            for (int i = 0; i < libros.size(); i++) {
+                if (libros.get(i) == null) {
+                    System.out.println("no hay libros");
+                }else {
+                    System.out.print((i + 1) + " " + libros.get(i));
+                }
+            }
+            System.out.println();
         }
     }
 
     public void mostrarClientes() {
-        for (int i = 0; i < clientes.size(); i++) {
-            System.out.println(clientes.get(i));
+        if (clientes.isEmpty())
+            System.out.println("No hay clientes");
+        else {
+            for (int i = 0; i < clientes.size(); i++) {
+                if (clientes.get(i) == null) {
+                    System.out.println("no hay clientes");
+                }else {
+                    System.out.print((i + 1) + " " + clientes.get(i));
+                }
+            }
+            System.out.println();
         }
     }
-
-//    public String buscarTitulo(String titulo){
-//        publicaciones.search(new Libro());
-//    }
-
 
     public GenericLinkedList<Publicacion> getPublicaciones() {
         return publicaciones;
@@ -252,7 +470,8 @@ public class Library {
     @Override
     public String toString() {
         return "La biblioteca tiene las siguientes publicaciones: \n" +
-                publicaciones + " y los siguientes clientes: \n" +
+                libros + revistas + periodicos
+                + " y los siguientes clientes: \n" +
                 clientes;
     }
 }

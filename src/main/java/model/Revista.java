@@ -11,6 +11,11 @@ public class Revista extends Publicacion {
         this.tematica = tematica;
         this.periodicidad = periodicidad;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
     @Override
     public String toString() {
         return "Revista con nombre '" + nombre + "' " +

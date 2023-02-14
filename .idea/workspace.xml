@@ -5,8 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e34a8a9a-446d-4016-b5ba-ce74ae0ffd05" name="Changes" comment="todo ok.&#10;Haciendo prueba de 3 listas para unificarlas a 1.">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/listas/GenericLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/listas/GenericLinkedList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/logic/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/Library.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Abonado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Abonado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Ejemplar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Ejemplar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Libro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Libro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Publicacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Publicacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Revista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Revista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/Input.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676309942672</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="todo ok.&#10;Haciendo prueba de 3 listas para unificarlas a 1.">
+      <created>1676311128797</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1676311128797</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

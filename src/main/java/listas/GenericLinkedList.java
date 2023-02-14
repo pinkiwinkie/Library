@@ -1,6 +1,8 @@
 package listas;
 
 import java.lang.reflect.Array;
+import java.util.List;
+import java.util.stream.Stream;
 
 public class GenericLinkedList<T> {
     private Node<T> head;

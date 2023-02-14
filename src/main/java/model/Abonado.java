@@ -22,6 +22,10 @@ public class Abonado {
         return disponibilidad;
     }
 
+    public GenericLinkedList<Prestamo> getLibrosPrestados() {
+        return librosPrestados;
+    }
+
     public GenericLinkedList<Prestamo> addPrestamo(Libro libro){
         if (librosPrestados.size() >= 3)
             System.out.println("Solo puedes alquilar un maximo de 3 libros.");
@@ -42,6 +46,19 @@ public class Abonado {
     public String getName() {
         return name;
     }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
     @Override
     public String toString() {
         return "Nombre: " + name +

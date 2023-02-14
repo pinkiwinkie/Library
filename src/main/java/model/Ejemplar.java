@@ -22,7 +22,10 @@ public class Ejemplar {
     }
 
     public void addAbonado(Abonado abonado) {
-        abonados.addHead(abonado);
+        if (abonados.isEmpty())
+            abonados.addHead(abonado);
+        else
+            abonados.addTail(abonado);
     }
 
     public int getCodigo() {

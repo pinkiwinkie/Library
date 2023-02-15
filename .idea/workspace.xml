@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e34a8a9a-446d-4016-b5ba-ce74ae0ffd05" name="Changes" comment="mirar como comparar los titulos de los libros">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="e34a8a9a-446d-4016-b5ba-ce74ae0ffd05" name="Changes" comment="acabar lo de cliente:&#10;-&gt; remove Prestamos&#10;-&gt; ver prestamos&#10;y creo que ya esta.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/logic/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/Library.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Abonado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Abonado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Libro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Libro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/Input.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,14 +40,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/eruizm/IdeaProjects/Chess&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "/home/eruizm/IdeaProjects/Colecciones"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="logic" />
@@ -111,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676311128797</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="acabar lo de cliente:&#10;-&gt; remove Prestamos&#10;-&gt; ver prestamos&#10;y creo que ya esta.">
+      <created>1676405169573</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1676405169573</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -129,6 +131,7 @@
     <MESSAGE value="first commit" />
     <MESSAGE value="cambios del lunes" />
     <MESSAGE value="todo ok.&#10;Haciendo prueba de 3 listas para unificarlas a 1." />
-    <option name="LAST_COMMIT_MESSAGE" value="todo ok.&#10;Haciendo prueba de 3 listas para unificarlas a 1." />
+    <MESSAGE value="acabar lo de cliente:&#10;-&gt; remove Prestamos&#10;-&gt; ver prestamos&#10;y creo que ya esta." />
+    <option name="LAST_COMMIT_MESSAGE" value="acabar lo de cliente:&#10;-&gt; remove Prestamos&#10;-&gt; ver prestamos&#10;y creo que ya esta." />
   </component>
 </project>

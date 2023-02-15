@@ -95,7 +95,7 @@ public class Library {
         int option2 = Input.getInt("Que libro? (Dime isbn)");
         for (int i = 0; i < libros.size(); i++) {
             if (option2 == libros.get(i).getIsbn()){
-
+//                libros.get(i).addPrestamo();
             }
         }
         mostrarClientes();

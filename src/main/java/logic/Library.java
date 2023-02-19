@@ -259,6 +259,7 @@ public class Library {
     }
 
     private void actualizarDatosClientes() {
+        mostrarClientes();
         boolean salir = false;
         String option = Input.getString("Que cliente quieres modificar? (Escribe dni)");
         do {

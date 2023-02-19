@@ -14,9 +14,9 @@ public class Abonado {
         this.librosPrestados = new GenericLinkedList<>();
     }
 
-    public boolean siHayEjemplaresDisponibles(Libro libro){
+    public boolean siHayEjemplaresDisponibles(Libro libro) {
         boolean disponibilidad = true;
-        for (int i = 1; i < libro.getEjemplares().size(); i++)
+        for (int i = 0; i < libro.getEjemplares().size(); i++)
             if (!libro.getEjemplares().get(i).isPrestado())
                 return disponibilidad;
         return disponibilidad;
@@ -26,8 +26,10 @@ public class Abonado {
         return librosPrestados;
     }
 
-    public void addPrestamo(Libro libro){
-        if (librosPrestados.size() >= 3)
+    public void addPrestamo(Libro libro) {
+        if (librosPrestados.size() == 0)
+            System.out.println("No tines ningun libro");
+        if (librosPrestados.size() > 3)
             System.out.println("Solo puedes alquilar un maximo de 3 libros.");
         else {
             if (siHayEjemplaresDisponibles(libro)) {
@@ -37,7 +39,7 @@ public class Abonado {
         }
     }
 
-    public void removePrestamo(Libro libro){
+    public void removePrestamo(Libro libro) {
         if (librosPrestados.size() == 0)
             System.out.println("No tienes ningun libro prestado.");
         for (int i = 0; i < librosPrestados.size(); i++) {
@@ -48,18 +50,19 @@ public class Abonado {
         mostrarLibrosPrestados();
     }
 
-    public void mostrarLibrosPrestados(){
+    public void mostrarLibrosPrestados() {
         if (librosPrestados.isEmpty())
             System.out.println("No hay libros prestados.");
-        else{
+        else {
             for (int i = 0; i < librosPrestados.size(); i++) {
                 if (librosPrestados.get(i) == null)
                     System.out.println("No hay libros prestados.");
                 else
-                    System.out.println((i+1) + " " + librosPrestados.get(i));
+                    System.out.println((i + 1) + " " + librosPrestados.get(i));
             }
         }
     }
+
     public String getName() {
         return name;
     }

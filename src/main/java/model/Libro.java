@@ -61,7 +61,7 @@ public class Libro extends Publicacion {
         if (ejemplares.isEmpty())
             output += ". Y no tiene ejemplares.";
         else
-            output += ". Tiene los siguientes ejemplares: " + ejemplares;
-        return output + " Es una " + super.toString();
+            output += ". Tiene los siguientes ejemplares: " + ejemplares +"\n";
+        return output + "Es una " + super.toString();
     }
 }

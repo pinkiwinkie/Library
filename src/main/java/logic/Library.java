@@ -17,7 +17,14 @@ public class Library {
 
     public Library() {
         generarPublicaciones();
+        generarEjemplares();
         this.clientes = generarClientes();
+    }
+
+    public void generarEjemplares() {
+        for (int i = 0; i < libros.size(); i++) {
+            libros.get(i).addEjemplar(7);
+        }
     }
 
     private void generarPublicaciones() {
@@ -60,15 +67,14 @@ public class Library {
                     "\n 2. Devolver un libro." +
                     "\n 3. Ver mis prestamos." +
                     "\n 4. Volver");
-            if (option == 1) {
-                mostrarPublicaciones();
-                obtenerLibro();
+            if (option == 1)  {
+                alquilarLibro();
                 salir = true;
             } else if (option == 2) {
                 devolverLibro();
                 salir = true;
             } else if (option == 3) {
-//                verPrestamos();
+                verPrestamos();
                 salir = true;
             } else if (option == 4) {
                 primerMenu();
@@ -78,33 +84,60 @@ public class Library {
         } while (!salir);
     }
 
-//    private void verPrestamos() {
-//        mostrarClientes();
-//        String option = Input.getString("Que cliente? (Dime dni)");
-//        for (int i = 0; i < clientes.size(); i++) {
-//            if (option.equals(clientes.get(i).getDni()))
-//                System.out.println(clientes.get(i).getLibrosPrestados());
-//        }
-//    }
-
-    private void devolverLibro() {
-    }
-
-    private void obtenerLibro(){
-        mostrarLibros();
-        int option2 = Input.getInt("Que libro? (Dime isbn)");
-        for (int i = 0; i < libros.size(); i++) {
-            if (option2 == libros.get(i).getIsbn()){
-//                libros.get(i).addPrestamo();
-            }
-        }
+    private void verPrestamos() {
         mostrarClientes();
         String option = Input.getString("Que cliente? (Dime dni)");
         for (int i = 0; i < clientes.size(); i++) {
-            if (option.equals(clientes.get(i).getDni())){
-//                clientes.get(i).addPrestamo();
+            if (option.equals(clientes.get(i).getDni()))
+                System.out.println(clientes.get(i).getLibrosPrestados());
+        }
+    }
+
+    private void devolverLibro() {
+        Abonado a = obtenerCliente();
+        Libro l = obtenerLibro();
+        assert a != null;
+        a.removePrestamo(l);
+        assert l != null;
+        l.removePrestamo(a);
+    }
+
+    private void alquilarLibro() {
+        Libro libro = obtenerLibro();
+        Abonado abonado = obtenerCliente();
+        if (libro == null)
+            System.out.println("No existe el libro");
+        else
+            libro.addPrestamo(abonado);
+        if (abonado == null)
+            System.out.println("No existe el cliente");
+        else {
+            abonado.addPrestamo(libro);
+            abonado.mostrarLibrosPrestados();
+        }
+//        System.out.println(new Prestamo(libro));
+    }
+
+    private Libro obtenerLibro() {
+        mostrarLibros();
+        int option2 = Input.getInt("Que libro? (Dime isbn)");
+        for (int i = 0; i < libros.size(); i++) {
+            if (option2 == libros.get(i).getIsbn()) {
+                return libros.get(i);
             }
         }
+        return null;
+    }
+
+    private Abonado obtenerCliente() {
+        mostrarClientes();
+        String option = Input.getString("Que cliente? (Dime dni)");
+        for (int i = 0; i < clientes.size(); i++) {
+            if (option.equals(clientes.get(i).getDni())) {
+                return clientes.get(i);
+            }
+        }
+        return null;
     }
 
     private void mostrarMenuEmpleado() {
@@ -180,7 +213,7 @@ public class Library {
                 salir = true;
             } else
                 System.out.println("Introduce una opcion valida");
-        }while (!salir);
+        } while (!salir);
     }
 
     private void darBajaPeriodico() {
@@ -193,7 +226,7 @@ public class Library {
                 }
             }
         }
-        publicaciones = merge(libros,periodicos,revistas);
+        publicaciones = merge(libros, periodicos, revistas);
         mostrarPublicaciones();
     }
 
@@ -207,7 +240,7 @@ public class Library {
                 }
             }
         }
-        publicaciones = merge(libros,periodicos,revistas);
+        publicaciones = merge(libros, periodicos, revistas);
         mostrarPublicaciones();
     }
 
@@ -221,7 +254,7 @@ public class Library {
                 }
             }
         }
-        publicaciones = merge(libros,periodicos,revistas);
+        publicaciones = merge(libros, periodicos, revistas);
         mostrarPublicaciones();
     }
 
@@ -247,7 +280,7 @@ public class Library {
                         datoModificado = Input.getString("Dime el nuevo dni");
                         clientes.get(i).setDni(datoModificado);
                         salir = true;
-                    }else
+                    } else
                         System.out.println("Introduce un numero valido");
                 }
             }
@@ -310,6 +343,7 @@ public class Library {
         }
         mostrarPublicaciones();
     }
+
     private Periodico crearUnPeriodico() {
         String editorial, name;
         int numPag, color;
@@ -409,14 +443,14 @@ public class Library {
 //        if (publicaciones.isEmpty())
 //            System.out.println("No hay publicaciones.");
 //        else {
-            for (int i = 0; i < publicaciones.size(); i++) {
-                if (publicaciones.get(i) == null) {
+        for (int i = 0; i < publicaciones.size(); i++) {
+            if (publicaciones.get(i) == null) {
 //                    System.out.println("no hay publicaciones");
-                } else {
-                    System.out.print((i + 1) + " " + publicaciones.get(i));
-                }
+            } else {
+                System.out.print((i + 1) + " " + publicaciones.get(i));
             }
-            System.out.println();
+        }
+        System.out.println();
 //        }
     }
 
@@ -427,7 +461,7 @@ public class Library {
             for (int i = 0; i < revistas.size(); i++) {
                 if (revistas.get(i) == null) {
                     System.out.println("no hay revistas");
-                }else{
+                } else {
                     System.out.print((i + 1) + " " + revistas.get(i));
                 }
             }
@@ -442,7 +476,7 @@ public class Library {
             for (int i = 0; i < periodicos.size(); i++) {
                 if (periodicos.get(i) == null) {
                     System.out.println("no hay periodicos");
-                }else {
+                } else {
                     System.out.print((i + 1) + " " + periodicos.get(i));
                 }
             }
@@ -457,7 +491,7 @@ public class Library {
             for (int i = 0; i < libros.size(); i++) {
                 if (libros.get(i) == null) {
                     System.out.println("no hay libros");
-                }else {
+                } else {
                     System.out.print((i + 1) + " " + libros.get(i));
                 }
             }

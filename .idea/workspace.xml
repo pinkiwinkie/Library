@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e34a8a9a-446d-4016-b5ba-ce74ae0ffd05" name="Changes" comment="acabar lo de cliente:&#10;-&gt; remove Prestamos&#10;-&gt; ver prestamos&#10;y creo que ya esta.">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/logic/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/Library.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Abonado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Abonado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Libro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Libro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Prestamo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Prestamo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +49,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "/home/eruizm/IdeaProjects/Colecciones"
+    "last_opened_file_path": "/home/win/IdeaProjects/Library"
   }
 }]]></component>
   <component name="RecentsManager">
